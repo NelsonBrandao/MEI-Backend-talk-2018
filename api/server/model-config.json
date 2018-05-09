@@ -20,5 +20,9 @@
   "Customer": {
     "dataSource": "mysql",
     "public": true
+  },
+  "coin": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

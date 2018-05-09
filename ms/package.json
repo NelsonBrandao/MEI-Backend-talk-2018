@@ -1,0 +1,22 @@
+{
+  "name": "ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Nelson Brandão <nelson.brandao@wearescytale.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bson-ext": "^2.0.0",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.7",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}

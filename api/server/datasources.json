@@ -4,12 +4,20 @@
     "connector": "memory"
   },
   "mysql": {
-    "name": "mysql",
-    "connector": "mysql",
     "host": "localhost",
     "port": 3306,
     "database": "mei-demo",
     "password": "j2gn3o23bgub3gb43",
+    "name": "mysql",
+    "connector": "mysql",
     "user": "root"
-   }
+  },
+  "mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "mei-demo-ms",
+    "name": "mongo",
+    "connector": "mongodb"
+  }
 }

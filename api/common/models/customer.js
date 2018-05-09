@@ -121,4 +121,30 @@ module.exports = function(Customer) {
       http: {verb: 'put'},
     }
   );
+
+  Customer.getCustomerCoins = function (req, data, callback) {
+    const payload = decodeToken(req.headers.authorization);
+
+    if (!payload) {
+      return callback(new Error('Authentication is required'));
+    }
+
+    Customer.findById(payload.customerId)
+      .then(customer => Customer.app.models.Coin.find({ where: { symbol: { inq: customer.favoriteCoins } } }))
+      .then(coins => callback(null, coins))
+      .catch(error => callback(error))
+    ;
+  };
+
+  Customer.remoteMethod(
+    'getCustomerCoins',
+    {
+      accepts: [
+        { arg: 'req', type: 'object', http: { source: 'req' } },
+        { arg: 'data', type: 'any', required: true, http: { source: 'body' } },
+      ],
+      returns: { arg: 'accessToken', type: 'object', root: true },
+      http: {verb: 'get'},
+    }
+  );
 };
