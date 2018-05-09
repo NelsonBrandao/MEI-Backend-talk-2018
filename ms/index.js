@@ -13,13 +13,17 @@ const coinCollection = connectionPromise
     .then(db => db.collection(collectionName))
 ;
 
-app.get('/coins', (req, res) => {
+app.get('/coin-ms/coins', (req, res) => {
     coinCollection
         .then(col => col.find({}).toArray())
-        .then(list => res.send(list));
+        .then(list => res.send(list))
+        .catch(error => {
+            res.status(500);
+            res.send(error);
+        });
 });
 
-app.get('/sync', (req, res) => {
+app.get('/coin-ms/sync', (req, res) => {
     request({
         url: 'https://api.coinmarketcap.com/v1/ticker/',
         json: true,

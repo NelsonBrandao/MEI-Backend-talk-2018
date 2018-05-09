@@ -61,14 +61,12 @@ module.exports = function(Customer) {
   );
 
   Customer.login = function (credentials, callback) {
-    console.log(credentials);
     if (!credentials.email || !credentials.password) {
       return callback(new Error('Credentials are invalid'));
     }
 
     Customer.findOne({ where: { email: credentials.email } })
       .then(customer => {
-        console.log(customer);
         if (!customer) {
           throw new Error('Credentials are invalid');
         }

@@ -1,0 +1,20 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Nelson Brandão <nelson.brandao@wearescytale.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-http-proxy": "^1.2.0",
+    "http-proxy-middleware": "^0.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
